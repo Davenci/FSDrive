@@ -1,3 +1,23 @@
+LLaMA-Factory_old/
+movqgan_ckpt/
+pic_samples/
+vis_traj/
+vis_cot/
+cache/
+.claude/
+tools/data/
+create_data/cached_nuscenes_info.pkl
+MoVQGAN/gt_indices_pretrain.json
+MoVQGAN/gt_indices_sft.json
+LLaMA-Factory/data/pretrain_data.json
+LLaMA-Factory/data/train_cot_motion.json
+LLaMA-Factory/data/train_cot_traj.json
+
+LLaMA-Factory/tests/
+LLaMA-Factory/tests_v1/
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
