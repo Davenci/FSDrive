@@ -1,6 +1,6 @@
 {
-  "pretrain_data": {
-    "file_name": "pretrain_data.json",
+  "pretrain_data_bottle": {
+    "file_name": "pretrain_data_bottle.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -8,8 +8,8 @@
       "images": "images"
     }
   },
-  "train_cot_motion": {
-    "file_name": "train_cot_motion.json",
+  "train_cot_motion_bottle": {
+    "file_name": "train_cot_motion_bottle.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -17,8 +17,38 @@
       "images": "images"
     }
   },
-  "val_cot_motion": {
-    "file_name": "val_cot_motion.json",
+  "val_cot_motion_bottle": {
+    "file_name": "val_cot_motion_bottle.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+
+  "pretrain_data_org": {
+    "file_name": "pretrain_data_org.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "train_cot_motion_org_mini": {
+    "file_name": "train_cot_motion_org_mini.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "val_cot_motion_org_mini": {
+    "file_name": "val_cot_motion_org_mini.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",

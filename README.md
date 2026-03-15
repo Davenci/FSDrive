@@ -1,3 +1,54 @@
+```bash
+uv sync
+cd LLaMA-Factory
+uv pip install -e ".[metrics,deepspeed,liger-kernel,bitsandbytes]" --no-build-isolation
+cd ..
+```
+
+
+# 预训练
+cd LLaMA-Factory
+llamafactory-cli train ../configs/pretrain.yaml
+
+
+# 微调
+llamafactory-cli train ../configs/sft.yaml
+
+# 推理
+python scripts/vllm_infer.py \
+--model_name_or_path saves/qwen2_vl-2b/sft-2026-03-04/checkpoint-5056 \
+--dataset val_cot_motion_mini \
+--template qwen2_vl \
+--cutoff_len 32768 \
+--max_new_tokens 2048 \
+--max_samples 100 \
+--image_max_pixels 524288 \
+--save_name results.jsonl \
+--temperature 0.1 \
+--top_p 0.1 \
+--top_k 10 \
+--skip_special_tokens False \
+--vllm_config '{"gpu_memory_utilization": 0.5}'
+
+# 评估 产生eval.json文件
+python tools/match.py \
+--pred_trajs_path ./LLaMA-Factory/results.jsonl \
+--token_traj_path ./LLaMA-Factory/data/val_cot_motion_org_mini.json
+
+# 生成视觉思维连
+python ./MoVQGAN/vis.py \
+--input_json ./LLaMA-Factory/eval_traj.json \
+--output_dir ./vis_cot
+
+
+
+
+
+
+
+
+
+
 <div align="center">
 <a id="readme-top"></a>
 <h1> <img src="assets/logo.png" style="vertical-align: -10px;" :height="50px" width="50px"> FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving </h1>

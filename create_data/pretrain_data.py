@@ -18,10 +18,11 @@ num_assistant_tokens = 0
 traj_only = True
 train_messages = []
 
-gt_indices=json.load(open('./MoVQGAN/gt_indices_pretrain.json'))
+gt_indices=json.load(open('./MoVQGAN/gt_indices_pretrain_bottle.json'))
+# dataroot = './LLaMA-Factory/data/nuscenes'
+# nusc = NuScenes(version='v1.0-trainval', dataroot=dataroot, verbose=True)
 dataroot = './LLaMA-Factory/data/nuscenes'
-nusc = NuScenes(version='v1.0-trainval', dataroot=dataroot, verbose=True)
-# nusc = NuScenes(version='v1.0-mini', dataroot=dataroot, verbose=True)
+nusc = NuScenes(version='v1.0-mini', dataroot=dataroot, verbose=True)
 
 cam_front_dir = os.path.join(dataroot, 'sweeps/CAM_FRONT')
 supported_extensions = ('.png', '.jpg', '.jpeg', '.JPG', '.JPEG', '.PNG')

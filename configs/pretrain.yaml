@@ -15,29 +15,29 @@ finetuning_type: full
 freeze_vision_tower: true # choices: [true, false]
 freeze_multi_modal_projector: true # choices: [true, false]
 # train_mm_proj_only: false # choices: [true, false]
-deepspeed: examples/deepspeed/ds_z0_config.json # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+deepspeed: null # 单卡训练不需要 DeepSpeed
 
 ### dataset
-dataset: pretrain_data
+dataset: pretrain_data_bottle
 template: qwen2_vl
 cutoff_len: 32768  # 上下文长度限制
 max_new_tokens: 2048 # 推理阶段允许模型生成的新 token 最大数量。
 max_samples: 50000 # 训练最多采样多少条数据。但实际只有200k条数据。
 overwrite_cache: true # 每次重新 tokenize+map，不使用 HF 缓存。 第一次必须为true，后续如果数据集没变可以设为 false。
-preprocessing_num_workers: 12
+preprocessing_num_workers: 24
 
 ### output
-output_dir: saves/qwen2_vl-2b/pretrain-11-21
+output_dir: saves/bottle/pretrain-qwen2-vl-2b-2026-03-14
 logging_steps: 10
-save_steps: 1000
+save_steps: 300
 plot_loss: true
 overwrite_output_dir: true
 
 ### train
-per_device_train_batch_size: 2
+per_device_train_batch_size: 48
 gradient_accumulation_steps: 1
 learning_rate: 5.0e-4
-num_train_epochs: 5.0
+num_train_epochs: 20
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true

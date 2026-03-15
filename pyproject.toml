@@ -1,0 +1,78 @@
+[project]
+name = "fsdrive"
+version = "0.1.0"
+description = "FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "av",
+    "datasets",
+    "einops",
+    "fastapi",
+    "fire",
+    "gradio",
+    "huggingface-hub",
+    "imageio",
+    "jieba",
+    "lmdb",
+    "matplotlib",
+    "modelscope",
+    "ndjson",
+    "nltk",
+    "numpy==1.26.4",
+    "nuscenes-devkit",
+    "openai",
+    "opencv-contrib-python",
+    "opencv-python",
+    "packaging",
+    "pandas",
+    "peft",
+    "pillow",
+    "psutil",
+    "pydantic",
+    "pyquaternion",
+    "pytorch-lightning",
+    "pyyaml",
+    "ray",
+    "requests==2.32.4",
+    "rouge-chinese",
+    "safetensors",
+    "setuptools==76.0.0",
+    "sse-starlette",
+    "tiktoken",
+    "tqdm",
+    "transformers>=4.49.0",
+    "trl",
+    "typing-extensions",
+    "uvicorn",
+    "vllm>=0.7.3",
+    # PyTorch with CUDA 12.4 support
+    "torch==2.5.1",
+    "torchvision==0.20.1",
+    "torchaudio==2.5.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+# PyTorch CUDA 12.4 index
+index-url = "https://download.pytorch.org/whl/cu124"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
+torchaudio = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

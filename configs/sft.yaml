@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: saves/qwen2_vl-2b/pretrain-11-21
+model_name_or_path: saves/qwen2_vl-2b/pretrain-2026-03-04
 image_max_pixels: 524288 # 宽 × 高 得到的数值
 video_max_pixels: 16384 
 trust_remote_code: true
@@ -15,20 +15,20 @@ finetuning_type: full
 freeze_vision_tower: true # choices: [true, false]
 freeze_multi_modal_projector: true # choices: [true, false]
 # train_mm_proj_only: false # choices: [true, false]
-deepspeed: examples/deepspeed/ds_z0_config.json # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+deepspeed: null # 单卡训练不需要 DeepSpeed
 
 ### dataset
 # dataset: train_cot_motion
-dataset: train_cot_motion
+dataset: train_cot_motion_org_mini
 template: qwen2_vl
 cutoff_len: 32768
 max_new_tokens: 2048
-max_samples: 10000   # 默认10000000
+max_samples: 500   # 默认10000000
 overwrite_cache: true
 preprocessing_num_workers: 12
 
 ### output
-output_dir: saves/qwen2_vl-2b/sft-11-21
+output_dir: saves/qwen2_vl-2b/sft-2026-03-04
 logging_steps: 10
 save_steps: 1000
 plot_loss: true
@@ -38,7 +38,7 @@ overwrite_output_dir: true
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 1
 learning_rate: 1.0e-4
-num_train_epochs: 4.0   # 默认12
+num_train_epochs: 16   # 默认12
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true
