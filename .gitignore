@@ -21,7 +21,9 @@ MoVQGAN/gt_indices_sft_org.json
 LLaMA-Factory/data/nuscenes_org
 create_data/cached_nuscenes_info_full.pkl
 tools/metrics
-
+LLaMA-Factory/data/juice_augmented
+make_data/juice
+val_images
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

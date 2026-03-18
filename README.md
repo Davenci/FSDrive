@@ -14,16 +14,16 @@ llamafactory-cli train ../configs/pretrain.yaml
 # 微调
 llamafactory-cli train ../configs/sft.yaml
 
-# 推理
+# 推理 ,在Llamafactory下产生results_bottle.jsonl文件
 python scripts/vllm_infer.py \
---model_name_or_path saves/qwen2_vl-2b/sft-2026-03-04/checkpoint-5056 \
---dataset val_cot_motion_mini \
+--model_name_or_path saves/juice/sft-qwen2-vl-2b-2026-03-18/checkpoint-100 \
+--dataset juice_sft_data_val_orange \
 --template qwen2_vl \
 --cutoff_len 32768 \
 --max_new_tokens 2048 \
 --max_samples 100 \
 --image_max_pixels 524288 \
---save_name results.jsonl \
+--save_name results_juice_orange_100.jsonl \
 --temperature 0.1 \
 --top_p 0.1 \
 --top_k 10 \
@@ -31,19 +31,38 @@ python scripts/vllm_infer.py \
 --vllm_config '{"gpu_memory_utilization": 0.5}'
 
 # 评估 产生eval.json文件
+cd ..
 python tools/match.py \
---pred_trajs_path ./LLaMA-Factory/results.jsonl \
---token_traj_path ./LLaMA-Factory/data/val_cot_motion_org_mini.json
+--pred_trajs_path ./LLaMA-Factory/results_juice_150.jsonl \
+--token_traj_path ./LLaMA-Factory/data/juice_anomaly_sft_val.json
 
 # 生成视觉思维连
 python ./MoVQGAN/vis.py \
---input_json ./LLaMA-Factory/eval_traj.json \
---output_dir ./vis_cot
+--input_json ./LLaMA-Factory/eval_traj_150step.json \
+--output_dir ./juice_cot_vis_150steps
 
+帮我完成自动化绘图，我现在的流程，依次运行微调llamafactory-cli train ../configs/sft.yaml，然后是评估对应的权重：python scripts/vllm_infer.py \
+--model_name_or_path saves/juice/sft-qwen2-vl-2b-2026-03-18/checkpoint-100 \
+--dataset juice_sft_data_val_orange \
+--template qwen2_vl \
+--cutoff_len 32768 \
+--max_new_tokens 2048 \
+--max_samples 100 \
+--image_max_pixels 524288 \
+--save_name results_juice_orange_100.jsonl \
+--temperature 0.1 \
+--top_p 0.1 \
+--top_k 10 \
+--skip_special_tokens False \
+--vllm_config '{"gpu_memory_utilization": 0.5}'
 
-
-
-
+得到结果后通过
+cd ..
+python tools/match.py \
+--pred_trajs_path ./LLaMA-Factory/results_juice_150.jsonl \
+--token_traj_path ./LLaMA-Factory/data/juice_anomaly_sft_val.json 得到eval。json文件，最后在通过python ./MoVQGAN/vis.py \
+--input_json ./LLaMA-Factory/eval_traj_150step.json \
+--output_dir ./juice_cot_vis_150steps得到最终的视觉思维连图片集合。我现在需要整合并且简化这个流程，我已经提供新文件夹auto_val，在新文件夹组建你需要的脚本文件等等，附上最简洁的使用说明，我一键运行即可，所有脚本代码必须极简风格来写。核心要求：在模型微调训练中，每存一个权重文件，就走执行一次自动化流程，得到我要的图片。我会提供评估的数据集，每次都在完整的评估数据上进行评估。最后输出图片集合，图片集合文件夹以当轮权重名字命名。数据加载路径逻辑保持原本的即可。
 
 
 
