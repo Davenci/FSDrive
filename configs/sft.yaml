@@ -19,18 +19,18 @@ deepspeed: null # 单卡训练不需要 DeepSpeed
 
 ### dataset
 # dataset: train_cot_motion
-dataset: juice_sft_data_train
+dataset: woood_sft_train
 template: qwen2_vl
 cutoff_len: 32768
 max_new_tokens: 2048
-max_samples: 10000   # 默认10000000
+max_samples: 10000   # 默认10000000 从训练集中选取的样本数量
 overwrite_cache: true
 preprocessing_num_workers: 12
 
 ### output
-output_dir: saves/juice/sft-qwen2-vl-2b-2026-03-18
+output_dir: saves/wood/sft-2026-03-26
 logging_steps: 10
-save_steps: 50
+save_steps: 30
 plot_loss: true
 overwrite_output_dir: true
 
@@ -38,7 +38,7 @@ overwrite_output_dir: true
 per_device_train_batch_size: 4
 gradient_accumulation_steps: 1
 learning_rate: 1.0e-4
-num_train_epochs: 5   # 默认12
+num_train_epochs: 2   # 默认12
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true

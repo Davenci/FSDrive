@@ -1,4 +1,106 @@
 {
+
+
+
+  "wood_sft_train": {
+    "file_name": "wood_anomaly_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+  "wood_sft_val": {
+    "file_name": "wood_30_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+
+  "zaocanhe_sft_train": {
+    "file_name": "zaocanhe_anomaly_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+  "zaocanhe_sft_val": {
+    "file_name": "zaocanhe_30_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+
+  "losiding_sft_train": {
+    "file_name": "losiding_anomaly_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+  "losiding_sft_val": {
+    "file_name": "losiding_30_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+  "tuding_sft_train": {
+    "file_name": "tuding_anomaly_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+  "tuding_sft_val": {
+    "file_name": "tuding_30_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+
+
+  "juice_30": {
+    "file_name": "juice_30.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
   "juice_sft_data_train": {
     "file_name": "juice_anomaly_sft_train.json",
     "formatting": "sharegpt",
@@ -17,8 +119,6 @@
       "images": "images"
     }
   },
-
-
   "juice_sft_data_val_orange": {
     "file_name": "juice_orange.json",
     "formatting": "sharegpt",
@@ -28,6 +128,10 @@
       "images": "images"
     }
   },
+
+
+
+
 
 
 
@@ -60,9 +164,6 @@
       "images": "images"
     }
   },
-
-
-
   "pretrain_data_org": {
     "file_name": "pretrain_data_org.json",
     "formatting": "sharegpt",
@@ -821,5 +922,14 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "juice_3": {
+    "file_name": "juice_3.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
   }
 }

@@ -24,6 +24,20 @@ tools/metrics
 LLaMA-Factory/data/juice_augmented
 make_data/juice
 val_images
+make_data/data
+LLaMA-Factory/data/capsule_augmented
+LLaMA-Factory/data/hazelunt_augmented
+LLaMA-Factory/data/losiding_augmented
+LLaMA-Factory/data/tuding_augmented
+LLaMA-Factory/data/transistor_augmented
+LLaMA-Factory/data/wood_augmented
+LLaMA-Factory/data/zaocanhe_augmented
+
+
+
+
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
