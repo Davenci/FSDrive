@@ -11,8 +11,8 @@ parser = argparse.ArgumentParser(description="Choose to use train or val tokens.
 parser.add_argument("--split", type=str, default="train", choices=["train", "val"], help="Select 'train' or 'val' token set")
 args = parser.parse_args()
 
-data = pickle.load(open('./create_data/cached_nuscenes_info.pkl', 'rb'))
-split = json.load(open('./create_data/full_split.json', 'r'))
+data = pickle.load(open('./create_data/cached_nuscenes_info_mini.pkl', 'rb'))
+split = json.load(open('./create_data/mini_split.json', 'r'))
 tokens = split[args.split]
 
 num_train_samples = len(tokens)
@@ -24,11 +24,13 @@ num_user_tokens = 0
 num_assistant_tokens = 0
 traj_only = True
 
-dataroot = './LLaMA-Factory/data/nuscenes'
-nusc = NuScenes(version='v1.0-trainval', dataroot=dataroot, verbose=True)
-# nusc = NuScenes(version="v1.0-mini", dataroot=dataroot, verbose=True)
+# dataroot = './LLaMA-Factory/data/nuscenes'
+# nusc = NuScenes(version='v1.0-trainval', dataroot=dataroot, verbose=True)
 
-sft_indices = json.load(open('./MoVQGAN/gt_indices_sft.json'))
+dataroot = './LLaMA-Factory/data/nuscenes'
+nusc = NuScenes(version="v1.0-mini", dataroot=dataroot, verbose=True)
+
+sft_indices = json.load(open('./MoVQGAN/gt_indices_sft_bottle.json'))
 train_messages = []
 
 for token_i, token in enumerate(tokens):
@@ -79,7 +81,7 @@ print(f"Number of assistant tokens: {num_assistant_tokens}")
 print(f"Number of total tokens: {num_language_tokens}")
 
 
-with open(f"./LLaMA-Factory/data/{args.split}_cot_motion.json", "w") as f:
+with open(f"./LLaMA-Factory/data/{args.split}_cot_motion_bottle.json", "w") as f:
     json.dump(train_messages, f, indent=4)
 
 

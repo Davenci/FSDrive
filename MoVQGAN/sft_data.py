@@ -31,8 +31,8 @@ def prepare_image(img):
     return torch.from_numpy(np.transpose(arr, [2, 0, 1]))
 
 dataroot = './LLaMA-Factory/data/nuscenes'
-nusc = NuScenes(version='v1.0-trainval', dataroot=dataroot, verbose=True)
-# nusc = NuScenes(version='v1.0-mini', dataroot=dataroot, verbose=True)
+# nusc = NuScenes(version='v1.0-trainval', dataroot=dataroot, verbose=True)
+nusc = NuScenes(version='v1.0-mini', dataroot=dataroot, verbose=True)
 
 model = get_movqgan_model('270M', pretrained=True, device='cuda')
 

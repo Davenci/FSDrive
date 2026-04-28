@@ -12,11 +12,31 @@ MoVQGAN/gt_indices_sft.json
 LLaMA-Factory/data/pretrain_data.json
 LLaMA-Factory/data/train_cot_motion.json
 LLaMA-Factory/data/train_cot_traj.json
-
 LLaMA-Factory/tests/
 LLaMA-Factory/tests_v1/
+__MACOSX
+data.zip
+MoVQGAN/gt_indices_pretrain_org.json
+MoVQGAN/gt_indices_sft_org.json
+LLaMA-Factory/data/nuscenes_org
+create_data/cached_nuscenes_info_full.pkl
+tools/metrics
+LLaMA-Factory/data/juice_augmented
+make_data/juice
+val_images
+make_data/data
+LLaMA-Factory/data/capsule_augmented
+LLaMA-Factory/data/hazelunt_augmented
+LLaMA-Factory/data/losiding_augmented
+LLaMA-Factory/data/tuding_augmented
+LLaMA-Factory/data/transistor_augmented
+LLaMA-Factory/data/wood_augmented
+LLaMA-Factory/data/zaocanhe_augmented
 
 
+
+
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

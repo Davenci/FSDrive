@@ -1,6 +1,9 @@
 {
-  "pretrain_data": {
-    "file_name": "pretrain_data.json",
+
+
+
+  "wood_sft_train": {
+    "file_name": "wood_anomaly_sft.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -8,8 +11,9 @@
       "images": "images"
     }
   },
-  "train_cot_motion": {
-    "file_name": "train_cot_motion.json",
+
+  "wood_sft_val": {
+    "file_name": "wood_30_val.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -17,8 +21,169 @@
       "images": "images"
     }
   },
-  "val_cot_motion": {
-    "file_name": "val_cot_motion.json",
+
+
+
+  "zaocanhe_sft_train": {
+    "file_name": "zaocanhe_anomaly_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+  "zaocanhe_sft_val": {
+    "file_name": "zaocanhe_30_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+
+  "losiding_sft_train": {
+    "file_name": "losiding_anomaly_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+  "losiding_sft_val": {
+    "file_name": "losiding_30_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+  "tuding_sft_train": {
+    "file_name": "tuding_anomaly_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+  "tuding_sft_val": {
+    "file_name": "tuding_30_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+
+
+  "juice_30": {
+    "file_name": "juice_30.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+  "juice_sft_data_train": {
+    "file_name": "juice_anomaly_sft_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "juice_sft_data_val": {
+    "file_name": "juice_anomaly_sft_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "juice_sft_data_val_orange": {
+    "file_name": "juice_orange.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+
+
+
+
+
+
+
+
+
+  "pretrain_data_bottle": {
+    "file_name": "pretrain_data_bottle.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "train_cot_motion_bottle": {
+    "file_name": "train_cot_motion_bottle.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "val_cot_motion_bottle": {
+    "file_name": "val_cot_motion_bottle.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "pretrain_data_org": {
+    "file_name": "pretrain_data_org.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "train_cot_motion_org_mini": {
+    "file_name": "train_cot_motion_org_mini.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
+  },
+  "val_cot_motion_org_mini": {
+    "file_name": "val_cot_motion_org_mini.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
@@ -757,5 +922,14 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "juice_3": {
+    "file_name": "juice_3.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system",
+      "images": "images"
+    }
   }
 }
